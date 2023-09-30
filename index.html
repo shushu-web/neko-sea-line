@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>猫町シーライン</title>
+</head>
+<body>
+    <button id="playButton">再生(船長からの案内がありましたら押してください)</button>
+    <audio id="audioPlayer">
+        <source src="sea.mp3" type="audio/mp3">
+        <!-- 音声ファイルのURLを指定してください -->
+    </audio>
+
+    <script>
+        // ボタン要素と音声要素を取得
+        var playButton = document.getElementById('playButton');
+        var audioPlayer = document.getElementById('audioPlayer');
+
+        // ボタンがクリックされた時の処理を定義
+        playButton.addEventListener('click', function() {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                playButton.textContent = '一時停止 (基本は使用しないでください)';
+            } else {
+                audioPlayer.pause();
+                playButton.textContent = '再生';
+            }
+        });
+    </script>
+</body>
+</html>
